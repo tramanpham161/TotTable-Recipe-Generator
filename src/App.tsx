@@ -113,7 +113,7 @@ export default function App() {
       setRecipe(result || 'Sorry, I couldn\'t generate a recipe.');
       setStep('recipe');
     } catch (err) {
-      setError('Something went wrong. Please check your connection.');
+      setError(err instanceof Error ? err.message : 'Something went wrong. Please check your connection.');
       setStep('setup');
     }
   };
@@ -194,7 +194,7 @@ export default function App() {
                       </div>
                     </div>
                     <div className="flex-1 pt-2">
-                      <p className="text-[17px] text-brand-charcoal leading-relaxed font-bold">
+                      <p className="text-[20px] text-brand-charcoal leading-relaxed font-bold">
                         {children}
                       </p>
                     </div>
@@ -340,7 +340,7 @@ export default function App() {
         <div className="flex items-center gap-6">
           <div className="hidden md:flex items-center gap-3">
             <div className="w-1.5 h-1.5 bg-brand-sage rounded-full animate-pulse" />
-            <span className="text-[12px] leading-tight font-medium text-stone-500 italic max-w-xs text-right">
+            <span className="text-[12px] leading-tight font-medium text-stone-500 italic whitespace-nowrap">
               Turn what’s in your fridge into fast, simple meals for your toddler.
             </span>
           </div>
@@ -509,8 +509,8 @@ export default function App() {
                     <UtensilsCrossed size={40} strokeWidth={2.5} />
                   </div>
                   <div className="space-y-2">
-                    <h2 className="text-2xl font-display font-black text-brand-charcoal uppercase tracking-widest">Ready to assist.</h2>
-                    <p className="text-stone-400 text-sm max-w-xs leading-relaxed">Select your age group, ingredients, and duration on the left to create a meal card.</p>
+                    <h2 className="text-2xl font-display font-black text-brand-charcoal uppercase tracking-widest">What’s in your fridge?</h2>
+                    <p className="text-stone-400 text-sm max-w-xs leading-relaxed">Pick an age, add ingredients, and get a simple toddler meal idea</p>
                   </div>
                 </div>
               </motion.div>
