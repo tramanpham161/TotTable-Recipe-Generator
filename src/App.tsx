@@ -408,7 +408,7 @@ export default function App() {
                   key={type.id}
                   onClick={() => setSelectedMealType(type.id)}
                   className={cn(
-                    "py-2 px-1 text-[9px] font-black rounded-xl border-2 transition-all uppercase tracking-tight",
+                    "py-2 px-1 text-[10px] font-black rounded-xl border-2 transition-all tracking-tight",
                     selectedMealType === type.id 
                       ? "bg-brand-cream border-brand-sage text-brand-sage" 
                       : "bg-transparent border-stone-50 text-stone-400"
